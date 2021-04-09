@@ -115,7 +115,7 @@ body {
 /*-- Home Inner Box CSS --*/
 .homeInnerBox {
     padding: 30px;
-    font-size: 20px;
+    font-size: 2.5rem;
 }
 img.homeLogo {
     display: block;
@@ -128,7 +128,32 @@ p.homeP {
 
 
 
+/* Desktop 150% */
+@media (min-width: 1025px) and (max-width: 1280px) {}
 
+/* Desktop  100% */
+@media (min-width: 1537px) and (max-width: 3000px) {}
+
+/* iPad pro */
+@media (min-width: 768px) and (max-width: 1024px) {
+	.homeInnerBox {
+	    font-size: 2rem;
+	}
+}
+
+/* Mobile landscape, ipad 2 */
+@media (min-width: 421px) and (max-width: 768px) {
+	.homeInnerBox {
+	    font-size: 2rem;
+	}
+}
+
+/* Mobile */
+@media (max-width: 420px) {
+	.homeInnerBox {
+	    font-size: 1.3rem;
+	}
+}
 
 
 

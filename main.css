@@ -103,9 +103,28 @@ body {
 }
 
 
+/*-- Home Outer Box CSS --*/
+.homeOuterBox {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+}
 
-
+/*-- Home Inner Box CSS --*/
+.homeInnerBox {
+    padding: 30px;
+    font-size: 20px;
+}
+img.homeLogo {
+    display: block;
+    width: 100% !important;
+}
+p.homeP {
+    text-align: center;
+    font-size: medium;
+}
 
 
 

@@ -9,4 +9,5 @@ if ('serviceWorker' in navigator) {
 
     window.onload=function(){
       document.getElementById("my_audio").play();
+      console.log("test");
     }

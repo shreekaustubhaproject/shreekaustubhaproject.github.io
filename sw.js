@@ -1,3 +1,6 @@
+var CACHE_STATIC_NAME = 'static-v2';
+var CACHE_DYNAMIC_NAME = 'dynamic-v2';
+
 self.addEventListener('install', function(event) {
   console.log('[Service Worker] Installing Service Worker ...', event);
   event.waitUntil(
@@ -31,7 +34,7 @@ self.addEventListener('activate', function(event) {
     caches.keys()
       .then(function(keyList) {
         return Promise.all(keyList.map(function(key) {
-          if (key !== 'static-v1' && key !== 'dynamic-v1') {
+          if (key !== CACHE_STATIC_NAME && key !== CACHE_DYNAMIC_NAME) {
             console.log('[Service Worker] Removing old cache.', key);
             return caches.delete(key);
           }

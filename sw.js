@@ -1,6 +1,27 @@
-
 self.addEventListener('install', function(event) {
   console.log('[Service Worker] Installing Service Worker ...', event);
+  event.waitUntil(
+  caches.open('static')
+  .then(function(cache) {
+	console.log('[service Worker] Precaching App sheel');
+	cache.addAll([
+	'/',
+	'/index.html',
+	'/main.css',
+	'/promise.js',
+	'/fetch.js',
+	'/skp.js',
+	'/img/bg.jpg',
+	'/img/logo_144X144.png',
+	'/img/logo_192X192.png',
+	'/img/logo_196X196.png',
+	'/img/logo_243X243.png',
+	'/img/logo_48X48.png',
+	'/img/logo_96X96.png'
+	]);	  
+  })
+  
+  )
 });
 
 self.addEventListener('activate', function(event) {
@@ -9,6 +30,22 @@ self.addEventListener('activate', function(event) {
 });
 
 self.addEventListener('fetch', function(event) {
-  console.log('[Service Worker] Fetching something ....', event);
-  event.respondWith(fetch(event.request));
+  event.respondWith(
+	caches.match(event.request)
+	.then(function(response){
+		if (response){
+			return response;
+		} else {
+			return fetch(event.request)
+			.then(function (res) {
+				return caches.open('dynamic')
+				.then(function(cache){
+					cache.put(event.request.url, res.clone());
+					return res;
+				})
+			});
+		}
+	})
+  
+  );
 });

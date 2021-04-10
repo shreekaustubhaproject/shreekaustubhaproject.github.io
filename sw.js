@@ -17,7 +17,8 @@ self.addEventListener('install', function(event) {
 	'/img/logo_196X196.png',
 	'/img/logo_243X243.png',
 	'/img/logo_48X48.png',
-	'/img/logo_96X96.png'
+	'/img/logo_96X96.png',
+	'water.mp3'
 	]);	  
   })
   

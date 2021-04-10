@@ -1,7 +1,7 @@
 self.addEventListener('install', function(event) {
   console.log('[Service Worker] Installing Service Worker ...', event);
   event.waitUntil(
-  caches.open('static')
+  caches.open('static-v1')
   .then(function(cache) {
 	console.log('[service Worker] Precaching App');
 	cache.addAll([
@@ -26,7 +26,18 @@ self.addEventListener('install', function(event) {
 });
 
 self.addEventListener('activate', function(event) {
-  console.log('[Service Worker] Activating Service Worker ...', event);
+  console.log('[Service Worker] Activating Service Worker ....', event);
+  event.waitUntil(
+    caches.keys()
+      .then(function(keyList) {
+        return Promise.all(keyList.map(function(key) {
+          if (key !== 'static-v1' && key !== 'dynamic-v1') {
+            console.log('[Service Worker] Removing old cache.', key);
+            return caches.delete(key);
+          }
+        }));
+      })
+  );
   return self.clients.claim();
 });
 
@@ -39,7 +50,7 @@ self.addEventListener('fetch', function(event) {
 		} else {
 			return fetch(event.request)
 			.then(function (res) {
-				return caches.open('dynamic')
+				return caches.open('dynamic-v1')
 				.then(function(cache){
 					cache.put(event.request.url, res.clone());
 					return res;

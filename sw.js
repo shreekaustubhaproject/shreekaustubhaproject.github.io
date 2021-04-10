@@ -4,7 +4,7 @@ var CACHE_DYNAMIC_NAME = 'dynamic-v2';
 self.addEventListener('install', function(event) {
   console.log('[Service Worker] Installing Service Worker ...', event);
   event.waitUntil(
-  caches.open('static-v1')
+  caches.open(CACHE_STATIC_NAME)
   .then(function(cache) {
 	console.log('[service Worker] Precaching App');
 	cache.addAll([
@@ -53,7 +53,7 @@ self.addEventListener('fetch', function(event) {
 		} else {
 			return fetch(event.request)
 			.then(function (res) {
-				return caches.open('dynamic-v1')
+				return caches.open(CACHE_DYNAMIC_NAME)
 				.then(function(cache){
 					cache.put(event.request.url, res.clone());
 					return res;

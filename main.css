@@ -93,6 +93,7 @@ body {
   .nav > .nav-links > a {
     display: block;
     width: 100%;
+    text-align: center;
   }
   .nav > #nav-check:not(:checked) ~ .nav-links {
     height: 0px;

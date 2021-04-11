@@ -131,12 +131,18 @@ p.homeP {
 
 /* Desktop 150% */
 @media (min-width: 1025px) and (max-width: 1280px) {
-
+	img.homeLogo {
+		width: 80%;
+    		height: auto;
+	}
 }
 
 /* Desktop  100% */
 @media (min-width: 1537px) and (max-width: 3000px) {
-
+	img.homeLogo {
+		width: 90%;
+    		height: auto;
+	}
 }
 
 /* iPad pro */
@@ -144,7 +150,10 @@ p.homeP {
 	.homeInnerBox {
 	    font-size: 2rem;
 	}
-
+	img.homeLogo {
+		width: 70%;
+    		height: auto;
+	}
 }
 
 /* Mobile landscape, ipad 2 */
@@ -152,13 +161,20 @@ p.homeP {
 	.homeInnerBox {
 	    font-size: 2rem;
 	}
-
+	img.homeLogo {
+		width: 60%;
+    		height: auto;
+	}
 }
 
 /* Mobile */
 @media (max-width: 420px) {
 	.homeInnerBox {
 	    font-size: 1.3rem;
+	}
+	img.homeLogo {
+		width: 100%;
+    		height: auto;
 	}
 }
 

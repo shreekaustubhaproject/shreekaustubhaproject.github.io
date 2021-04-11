@@ -12,6 +12,7 @@ body {
   height: 50px;
   width: 100%;
   background-color: #000;
+  display: flow-root !important;
   position: relative;
 }
 

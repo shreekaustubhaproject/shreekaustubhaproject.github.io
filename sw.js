@@ -1,5 +1,5 @@
-var CACHE_STATIC_NAME = 'static-v3';
-var CACHE_DYNAMIC_NAME = 'dynamic-v3';
+var CACHE_STATIC_NAME = 'static-v5';
+var CACHE_DYNAMIC_NAME = 'dynamic-v5';
 
 self.addEventListener('install', function(event) {
   console.log('[Service Worker] Installing Service Worker ...', event);
@@ -10,6 +10,10 @@ self.addEventListener('install', function(event) {
         cache.addAll([
         '/',
         '/index.html',
+	'/About-Us.html',
+	'/Current-Projects.html',
+	'/Completed-Projects.html',
+	'/Contact-Us.html',
 	'/main.css',
 	'/promise.js',
 	'/fetch.js',

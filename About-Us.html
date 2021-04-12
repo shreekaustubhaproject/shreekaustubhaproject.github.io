@@ -14,10 +14,12 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<meta name="language" content="English">
 	<meta name="author" content="Eleazer Patil">
-        <link href="bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">	
+        	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<link href="bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Calibri:400,700,400italic,700italic" rel="stylesheet">
-	<link rel="stylesheet" href="main.css?=ver2">
-	<link rel="manifest" href="manifest.json">
+	<link rel="stylesheet" href="/bg.css">
+	<link rel="stylesheet" href="/main.css">
+	<link rel="manifest" href="/manifest.json">
 	
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website">
@@ -53,17 +55,14 @@
 	<link rel="shortcut icon" sizes="196x196" href="img/logo_196X196.png">
 	<link rel="apple-touch-icon" href="img/logo_196X196.png">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
-	<style>
-    #hero {
-        background: url("/img/bg.jpg") no-repeat center;
-        background-size: cover;
-    }
-	.row {
-    margin-top: initial !important;
-	}
-	</style>
-  </head>
-  <body>
+</head>
+<body>
+<div class="loader"></div>
+<iframe src="silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
+<audio id="player" autoplay loop>
+    <source src="water.mp3" type="audio/mp3">
+</audio> 
+	
   <div class="nav">
   <input type="checkbox" id="nav-check">
   <div class="nav-header">
@@ -132,9 +131,12 @@
 </div>
 
 
-    <script src="popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+   <script src="popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
     <script src="bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
-
+    <!-- General Files -->
+    <script src="promise.js"></script>
+    <script src="fetch.js"></script>
+    <script src="skp.js"></script>
 
   </body>
 </html>

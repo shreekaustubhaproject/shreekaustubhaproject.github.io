@@ -1,5 +1,5 @@
-document.addEventListener("DOMContentLoaded", function () {
-$(".loader").fadeOut("slow");
+$(window).load(function() {
+   $(".loader").fadeOut("slow");
 });
 
 if (!window.Promise) {

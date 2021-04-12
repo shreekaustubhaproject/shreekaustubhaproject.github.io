@@ -1,11 +1,18 @@
 * {
   box-sizing: border-box;
 }
-
+html { 
+	  background: url(img/bg.jpg) no-repeat center center fixed; 
+	  -webkit-background-size: cover !important;
+	  -moz-background-size: cover !important;;
+	  -o-background-size: cover !important;;
+	  background-size: cover !important;;
+	}
 body {
-  margin: 0px;
-  font-family: 'Calibri';
-}
+	  margin: 0px;
+	  font-family: 'Calibri';
+	 background-color: transparent !important;
+     }
 
 .nav {
   height: 50px;

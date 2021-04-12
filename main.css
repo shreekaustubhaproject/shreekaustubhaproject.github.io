@@ -13,6 +13,7 @@ body {
   background-color: #000;
   display: flow-root !important;
   position: relative;
+  overflow: hidden;
 }
 
 .nav > .nav-header {

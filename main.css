@@ -34,6 +34,7 @@ body {
   display: inline;
   float: right;
   font-size: 18px;
+  z-index: 1;
 }
 
 .nav > .nav-links > a {

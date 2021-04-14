@@ -14,6 +14,7 @@ self.addEventListener('install', function(event) {
 	'/Current-Projects.html',
 	'/Completed-Projects.html',
 	'/Contact-Us.html',
+	'/offline.html',
 	'/main.css',
 	'/promise.js',
 	'/fetch.js',
